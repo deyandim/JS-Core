@@ -1,20 +1,20 @@
 function solve(input){
     let arr = input.split(" ");
     let newArr = [];
-    for(element in arr){
-        if(+arr[element]){
-            newArr.push(+arr[element]);
+    for(let element of arr){        
+        if(+element){
+            newArr.push(element);
         }
     }
     let suffix;
-    for(el in newArr){
-       switch(newArr[el] % 10){
+    for(let el of newArr){
+       switch(el % 10){
            case 1: suffix = "st";break;
            case 2: suffix = "nd";break;
            case 3: suffix = "rd";break;
            default: suffix = "th";break;
        }
-        console.log(`${newArr[el]}${suffix}`);        
+        console.log(`${el}${suffix}`);        
     }    
 }
 

@@ -21,14 +21,18 @@ function solve(arr1, arr2, arr3) {
         return a-b;
       });
     
-      if(finalArr.length ===0) return 0
+      if(finalArr.length ===0){
+           return 0;
+      }
     
-      var half = Math.floor(finalArr.length / 2);
+      let half = Math.floor(finalArr.length / 2);
     
-      if (finalArr.length % 2)
+      if (finalArr.length % 2){
         return finalArr[half];
-      else
+      }
+      else{
         return (finalArr[half - 1] + finalArr[half]) / 2.0;
+      }
     }
     finalArr = finalArr.sort();
     let output = median(finalArr);
