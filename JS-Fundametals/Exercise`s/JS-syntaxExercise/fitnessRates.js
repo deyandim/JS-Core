@@ -1,12 +1,12 @@
 function solve(dayOfWeeek, service, hour){
     let price;
     
-    if(hour >= 8.00 && hour < 15.00){
+    if(hour >= 8.00 && hour <= 15.00){
         switch(dayOfWeeek){
             case "Monday":
             case "Tuesday":
             case "Wednesday":
-            case "Thurstday":
+            case "Thursday":
             case "Friday": 
             switch(service){
                 case "Fitness": price = 5.00;break;
@@ -22,12 +22,12 @@ function solve(dayOfWeeek, service, hour){
             };break;
         }
     }
-    else if(hour >= 15.00 && hour <= 22.00){
+    else if(hour > 15.00 && hour <= 22.00){
         switch(dayOfWeeek){
             case "Monday": 
             case "Tuesday": 
             case "Wednesday":
-            case "Thurstday":
+            case "Thursday":
             case "Friday": 
             switch(service){
                 case "Fitness": price = 7.50;break;
