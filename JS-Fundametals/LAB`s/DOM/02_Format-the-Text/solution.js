@@ -1,25 +1,29 @@
-function solve(){
+function solve() {
   let mainParagraph = document.getElementById("input").textContent;
-  let first = mainParagraph.indexOf("Web.") + 4;
-  let firstP = mainParagraph.slice(0, first);
-  let second = mainParagraph.indexOf("styles.") + 7;
-  let secondP = mainParagraph.slice(first, second);
-  mainParagraph = mainParagraph.slice(second, mainParagraph.length);
+  let newArr = [];
+  let count = 0;
+  let index = 0;
 
+  // spliting string to paragraphs
+  for (i = 0; i < mainParagraph.length; i++) {
+    if (mainParagraph[i] === "." || mainParagraph[i] === "!" || mainParagraph[i] === "?") {
+      count++;
+    }
+    if (count == 3) {
+      newArr.push(mainParagraph.slice(index, i + 1));
+      index = i + 1;
+      count = 0;
+    }
+  }
 
-  let p1 = document.createElement("p");
-  let p2 = document.createElement("p");
-  let p3 = document.createElement("p");
+  // adding last paragraph
+  last = mainParagraph.slice(index, mainParagraph.length);
+  newArr.push(last);
 
-  document.getElementById("output").appendChild(p1);
-  document.getElementById("output").appendChild(p2);
-  document.getElementById("output").appendChild(p3);
-
-  p1.textContent = firstP;
-  p2.textContent = secondP;
-  p3.textContent = mainParagraph;
-  console.log(p1.textContent);
-  
-
+  // create and appendig
+  for (let paragraph of newArr) {
+    let p1 = document.createElement("p");
+    document.getElementById("output").appendChild(p1);
+    p1.textContent = paragraph;
+  }
 }
-
