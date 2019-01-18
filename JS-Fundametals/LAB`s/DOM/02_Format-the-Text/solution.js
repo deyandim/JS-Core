@@ -20,7 +20,7 @@ function solve() {
   last = mainParagraph.slice(index, mainParagraph.length);
   newArr.push(last);
 
-  // create and appendig
+  // create and appending
   for (let paragraph of newArr) {
     let p1 = document.createElement("p");
     document.getElementById("output").appendChild(p1);
