@@ -6,6 +6,17 @@ function solve() {
     let obj = {};
     arr.pop();
 
+    // function keyExist(key, obj){
+    //     if (count != 3) {
+    //         if (!(key in obj)) {
+    //             obj[key] = el + ".";
+    //         } else {
+    //             obj[key] += el + ".";
+    //         }
+    //     }
+    //     return obj;
+    // }
+
     for (let el of arr) {
         if (count != 3) {
             if (!(key in obj)) {
