@@ -10,41 +10,54 @@ function solve() {
 	buttons[1].addEventListener('click', answer2);
 	buttons[2].addEventListener('click', getResult);
 
+	let firstAnswer;
+	let secondAnswer;
+
 	function answer() {
 		for (let btn of radioBtnYear) {
 			if (btn.checked) {
-				if(btn.value === '2013'){
-					rightAnswers++;
-				}
+				firstAnswer = btn.value;
 				document.getElementsByTagName('section')[1].style.display = 'block';
-				buttons[0].removeEventListener('click', answer);				
+				buttons[0].removeEventListener('click', answer);
 			}
-		}		
+			btn.setAttribute('disabled', true);
+			
+			
+		}
 	}
-	
+
+
 	function answer2() {
-		for (let btn of popularName) {
-			if (btn.checked) {
-				if(btn.value === 'Pesho'){
-					rightAnswers++;
-				}
+		for (let btn2 of popularName) {
+			if (btn2.checked) {
+				secondAnswer = btn2.value;
 				document.getElementsByTagName('section')[2].style.display = 'block';
-				buttons[0].removeEventListener('click', answer);				
+				buttons[0].removeEventListener('click', answer);
 			}
-		}		
+			btn2.setAttribute('disabled', true);
+		}
 	}
-	function getResult(){
-		for(let btn of softUniFounder){
-			if(btn.checked){
-				if(btn.value === 'Nakov'){
+
+	function getResult() {
+		for (let btn of softUniFounder) {
+			if (btn.checked) {
+				if (firstAnswer == '2013') {
 					rightAnswers++;
 				}
-				if(rightAnswers === 3){
+				if (secondAnswer == 'Pesho') {
+					rightAnswers++;
+				}
+				if (btn.value == 'Nakov') {
+					rightAnswers++;
+				}
+
+				if (rightAnswers === 3) {
 					result.textContent = 'You are recognized as top SoftUni fan!';
-				}else{
+				} else {
 					result.textContent = `You have ${rightAnswers} right answers`;
 				}
 			}
+			btn.setAttribute('disabled', true);
 		}
 	}
 }

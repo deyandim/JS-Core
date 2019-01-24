@@ -16,7 +16,7 @@
         for(i = 0; i < 9; i++){
             sum += +input[i] * weightNums[i];
         }
-        if(sum % 11 === 0 || sum % 11 === 10){
+        if(sum % 11 === lastNum || ((sum % 11 === 10) && lastNum === 0)) {
             result.textContent = 'This number is Valid!';
         }else{
             result.textContent = 'This number is NOT Valid!';
