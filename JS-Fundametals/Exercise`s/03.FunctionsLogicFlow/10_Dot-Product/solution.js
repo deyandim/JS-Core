@@ -14,7 +14,7 @@ function solve() {
 		
 		
 	}
-
+	
 
 	secondMatrix = secondMatrix.slice(1, -1);
 
