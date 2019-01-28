@@ -1,19 +1,19 @@
 function generateMatrix(n) {
-    var total = n * n;
-    var result = [];
+    let total = n * n;
+    let result = [];
 
-    for (var i = 0; i < n; i++) {
-        var rs = [];
-        for (var j = 0; j < n; j++) {
+    for (let i = 0; i < n; i++) {
+        let rs = [];
+        for (let j = 0; j < n; j++) {
             rs.push(0);
         }
         result.push(rs);
     }
 
-    var x = 0;
-    var y = 0;
-    var step = 0;
-    for (var i = 0; i < total;) {
+    let x = 0;
+    let y = 0;
+    let step = 0;
+    for (let i = 0; i < total;) {
         while (y + step < n) {
             i++;
             result[x][y] = i;
