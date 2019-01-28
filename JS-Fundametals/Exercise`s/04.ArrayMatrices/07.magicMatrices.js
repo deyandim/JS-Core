@@ -1,31 +1,22 @@
 function solve(input) {
-    let finalRowSum = [];
-    let finalColSum = [];
+    let sum = input[0].reduce(add, 0);
     for (let i = 0; i < input.length; i++) {
-        let colSum = 0;
-        let rowSum = 0;
-
-        for (let j = 0; j < input[i].length; j++) {
-            rowSum += input[i][j];
-            colSum += input[j][i];
-        }
-        if (colSum !== rowSum) {
+        let rowSum = input[i].reduce(add, 0);
+        if(rowSum !== sum){
             return false;
         }
-        finalRowSum.push(rowSum);
-        finalColSum.push(colSum);
-    }
-    for (let i = 0; i < finalRowSum.length; i++) {
-        for (let j = 0; j < finalColSum.length; j++) {
-            if (finalRowSum[i] !== finalColSum[j]) {
-                return false;
-            }
+        let colSum = 0;
+        for (let j = 0; j < input[i].length; j++) {
+            colSum += +input[i][j];            
         }
-
+        if(colSum !== sum){
+            return false;
+        }       
     }
-
+    function add(a, b){
+        return a + b;
+    }
 return true;
-
 }
 
 console.log(solve([

@@ -12,7 +12,7 @@ function solve(input) {
         }
 
     }
-    if (!input.includes(add) && output.length === 0) {
+    if (!input.includes(add) || output.length === 0) {
         return 'Empty';
     }
     return output.join('\n');
