@@ -28,7 +28,7 @@ function solve() {
   console.log(binary.join('\n'));
   
 
-  let pattern = /[a-zA-Z\s]*?/gm;
+  let pattern = /[a-zA-Z\s]/gm;
   let resultText = [];
   for (let item of binary) {
 
@@ -42,7 +42,6 @@ function solve() {
     }
   }
 
-  console.log(resultText);
 
 
   result.textContent = resultText.join('');
