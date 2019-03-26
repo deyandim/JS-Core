@@ -77,13 +77,8 @@
        function arriveStop(data){
            $('#depart').attr('disabled', false);
            $('#arrive').attr('disabled', true);
-           $('#info .info').text(`Arriving at ${station}`);
-           if(data.next === 'depot'){
-               station = 'Depot'
-           }else{
-               station = data.next;
-           }
-
+           $('#info .info').text(`Arriving at ${data.name}`);
+           station = data.next;
        }
 
 
@@ -91,7 +86,7 @@
 
            $('#depart').attr('disabled', true);
            $('#arrive').attr('disabled', false);
-           $('#info .info').text(`Next stop ${station}`);
+           $('#info .info').text(`Next stop ${data.name}`);
 
        }
         return {
