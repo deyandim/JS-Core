@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Shit</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
     <style>
         #results {
             background-color: #FFFFFF;
@@ -47,15 +53,51 @@
     </style>
 </head>
 <body>
-<table id="results">
-    <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Faculty Number</th>
-        <th>Grade</th>
-    </tr>
-</table>
+<div id="main" class="container" >
+    <div class="row" >
+        <div class="col-9">
+            <table id="results">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Faculty Number</th>
+                    <th>Grade</th>
+                </tr>
+            </table>
+        </div>
+        <div id="action" class="col-3">
+
+            <form style="position: fixed">
+                <h5>Add Student</h5>
+                <div class="form-group" >
+                    <label for="firstname">First Name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter First Name">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="facultyNumber">Faculty Number</label>
+                    <input type="text" class="form-control" id="facultyNumber" placeholder="Enter Faculty Number">
+                </div>
+                <div class="form-group">
+                    <label for="grade">Grade</label>
+                    <input type="number" class="form-control" id="grade" placeholder="Enter Grade">
+                </div>
+                <button type="button" onclick="addStudent()" class="btn btn-secondary ">Add</button>
+                <button type="button" onclick="loadStudents()" class="btn btn-secondary m-1">Load</button>
+                <button id="delete" type="button" onclick="deleteStudent()" class="btn btn-danger" disabled>Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
 <script src="script.js"></script>
+
 </body>
 </html>

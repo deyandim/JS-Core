@@ -1,0 +1,33 @@
+/*.container {*/
+    /*background-color: #4caf50;*/
+/*}*/
+body {
+    background: url('https://cdn.dribbble.com/users/221364/screenshots/3278953/flags-dribble.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+button {
+    width: 80px;
+}
+
+
+#tableCountries {
+    width: auto;
+}
+
+
+#countries {
+    display: none;
+}
+
+#inputCountry, #inputTown, .editCountry {
+    text-transform: capitalize;
+}
+
+#getCountryTowns {
+    margin-bottom: 2px ;
+}
+
